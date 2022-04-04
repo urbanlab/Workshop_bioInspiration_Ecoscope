@@ -48,7 +48,7 @@ git clone https://github.com/urbanlab/Workshop_bioInspiration_Ecoscope.git ~/Pro
 cd ecoscope/src
 # Installation des bibliothèques js.
 npm install
-# Construction du conteneur
+# Construction de l'image
 cd ..
 docker build -t ecoscope .
 # Lancement du conteneur.
@@ -58,3 +58,15 @@ docker run -d -p 5000:80 --name ecoscope ecoscope
 Une fois ce conteneur actif, vous pouvez ouvrir les urls locales suivantes :
 - [http://localhost:5000/](http://localhost:5000/)
 - [http://localhost:5000/form.php](http://localhost:5000/form.php)
+
+## Administration ERASME
+
+Il est possible de pousser sur dockerhub une image qui pourrait être facilement réutilisée.
+```bash
+# Connectez-vous à docker en ligne de commande
+docker login --username=erasme
+# Récupérez l'identifiant de l'image construite (remplacez 12charcode avec)  
+docker tag 12charcode erasme/ecoscope
+# Envoyez l'image sur docker
+sudo docker push erasme/ecoscope
+```
