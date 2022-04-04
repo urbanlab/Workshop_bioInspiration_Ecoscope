@@ -37,4 +37,24 @@ dans votre `index.php`)
 Pour le moment, il suffit de copier le dossier dans un dossier apache et d'ouvrir l'url
 correspondante dans votre navigateur pour en voir le résultat.
 
-Un `Dockerfile` est en cours de tests.
+### Installation automatisée
+
+Un `Dockerfile` est disponible. Suivez ces étapes :
+
+```bash
+# Clonage du dépôt
+git clone https://github.com/urbanlab/Workshop_bioInspiration_Ecoscope.git ~/Projets/ecoscope
+# Déplacement dans notre code
+cd ecoscope/src
+# Installation des bibliothèques js.
+npm install
+# Construction du conteneur
+cd ..
+docker build -t ecoscope .
+# Lancement du conteneur.
+docker run -d -p 5000:80 --name ecoscope ecoscope
+```
+
+Une fois ce conteneur actif, vous pouvez ouvrir les urls locales suivantes :
+- [http://localhost:5000/](http://localhost:5000/)
+- [http://localhost:5000/form.php](http://localhost:5000/form.php)
