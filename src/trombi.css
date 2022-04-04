@@ -29,7 +29,6 @@ body{
   width: 25%;
   float: left;
   font-family: 'Montserrat', sans-serif;
-
   background-color: #F8F8F8;
 }
 
@@ -63,85 +62,42 @@ p{
   margin-left: 45px;
   font-weight: bolder;
 }
-
-
-
 #listeFiltres{
-
   margin-left: 40px;
-
 }
-
-
-
 #filtres h3{
-
   margin-top: 5em;
-
   margin-left: 40px;
-
 }
-
-
 
 #filtres p{
-
   margin-left: 40px;
-
   width: 70%;
-
 }
-
-
 
 input{
-
   border-radius: 10px;
-
   height:40px;
-
   width: 220px;
-
   background-color: #F8F8F8;
-
   font-family: 'Montserrat', sans-serif;
-
 }
-
-
 
 select{
-
   border-radius: 10px;
-
   height:40px;
-
   width: 220px;
-
   background-color: #F8F8F8;
-
   font-family: 'Montserrat', sans-serif;
-
 }
 
-
-
 button{
-
   border-radius: 40px;
-
   height:40px;
-
   width: 100px;
-
   background-color: black;
-
   color:white;
-
   margin-top: 20px;
-
   margin-left: 60px;
-
   font-family: 'Montserrat', sans-serif;
-
 }
