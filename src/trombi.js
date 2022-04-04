@@ -125,64 +125,64 @@ function mettreAJourLaDescription(listePersonnes=[], idPersonne=0, noeudsMDM=[])
     const veritableID = idPersonne-noeudsMDM.length-3 // On retire le nombre de nœuds MDM + le nœud Métropole
     const blocDescription = document.getElementById('description')
     blocDescription.style.border = 'solid 1px black';
-    console.log(listePersonnes[veritableID])
+    if(listePersonnes[veritableID]===undefined){
 
-    // IMAGE
-    const imgPersonne = document.createElement('img')
-    imgPersonne.id = 'imgPersonne'
-    imgPersonne.src = "data/portraits_mdm/femme/"+ listePersonnes[veritableID].photo
-    if (listePersonnes[veritableID].genre==='homme'){
-        imgPersonne.src = "data/portraits_mdm/homme/"+ listePersonnes[veritableID].photo
+        // IMAGE
+        const imgPersonne = document.createElement('img')
+        imgPersonne.id = 'imgPersonne'
+        imgPersonne.src = "data/portraits_mdm/femme/"+ listePersonnes[veritableID].photo
+        if (listePersonnes[veritableID].genre==='homme'){
+            imgPersonne.src = "data/portraits_mdm/homme/"+ listePersonnes[veritableID].photo
+        }
+        imgPersonne.height=50
+        imgPersonne.width=50
+        // PRÉNOM
+        const paragraphePrenomPersonne = document.createElement('p')
+        paragraphePrenomPersonne.id = 'paragraphePrenomPersonne'
+        const textePrenomPersonne = document.createTextNode(listePersonnes[veritableID].prenom)
+        paragraphePrenomPersonne.appendChild(textePrenomPersonne)
+        // NOM
+        const paragrapheNomPersonne = document.createElement('p')
+        paragrapheNomPersonne.id = 'paragrapheNomPersonne'
+        const texteNomPersonne = document.createTextNode(listePersonnes[veritableID].nom)
+        paragrapheNomPersonne.appendChild(texteNomPersonne)
+        // SERVICE
+        const paragrapheService = document.createElement('p')
+        paragrapheService.id = 'paragrapheService'
+        const texteServicePersonne = document.createTextNode(listePersonnes[veritableID].service)
+        paragrapheService.appendChild(texteServicePersonne)
+        // POSTE
+        const paragraphePoste = document.createElement('p')
+        paragraphePoste.id = 'paragraphePoste'
+        const textePostePersonne = document.createTextNode(listePersonnes[veritableID].poste)
+        paragraphePoste.appendChild(textePostePersonne)
+        // ANCIENNETÉ
+        const paragrapheAnciennete = document.createElement('p')
+        paragrapheAnciennete.id = 'paragraphePoste'
+        const texteAnciennetePersonne = document.createTextNode(listePersonnes[veritableID].anciennete)
+        paragrapheAnciennete.appendChild(texteAnciennetePersonne)
+        // E-MAIL
+        const paragrapheEMail = document.createElement('p')
+        paragrapheEMail.id = 'paragraphePoste'
+        const texteEMailPersonne = document.createTextNode(listePersonnes[veritableID].email)
+        paragrapheEMail.appendChild(texteEMailPersonne)
+        // TÉLÉPHONE
+        const paragrapheTelephone = document.createElement('p')
+        paragrapheTelephone.id = 'paragraphePoste'
+        const texteTelephonePersonne = document.createTextNode(listePersonnes[veritableID].telephone)
+        paragrapheTelephone.appendChild(texteTelephonePersonne)
+
+        blocDescription.replaceChildren(
+            imgPersonne,
+            paragraphePrenomPersonne,
+            paragrapheNomPersonne,
+            paragrapheService,
+            paragraphePoste,
+            paragrapheAnciennete,
+            paragrapheEMail,
+            paragrapheTelephone
+        )
     }
-    imgPersonne.height=50
-    imgPersonne.width=50
-    // PRÉNOM
-    const paragraphePrenomPersonne = document.createElement('p')
-    paragraphePrenomPersonne.id = 'paragraphePrenomPersonne'
-    const textePrenomPersonne = document.createTextNode(listePersonnes[veritableID].prenom)
-    paragraphePrenomPersonne.appendChild(textePrenomPersonne)
-    // NOM
-    const paragrapheNomPersonne = document.createElement('p')
-    paragrapheNomPersonne.id = 'paragrapheNomPersonne'
-    const texteNomPersonne = document.createTextNode(listePersonnes[veritableID].nom)
-    paragrapheNomPersonne.appendChild(texteNomPersonne)
-    // SERVICE
-    const paragrapheService = document.createElement('p')
-    paragrapheService.id = 'paragrapheService'
-    const texteServicePersonne = document.createTextNode(listePersonnes[veritableID].service)
-    paragrapheService.appendChild(texteServicePersonne)
-    // POSTE
-    const paragraphePoste = document.createElement('p')
-    paragraphePoste.id = 'paragraphePoste'
-    const textePostePersonne = document.createTextNode(listePersonnes[veritableID].poste)
-    paragraphePoste.appendChild(textePostePersonne)
-    // ANCIENNETÉ
-    const paragrapheAnciennete = document.createElement('p')
-    paragrapheAnciennete.id = 'paragraphePoste'
-    const texteAnciennetePersonne = document.createTextNode(listePersonnes[veritableID].anciennete)
-    paragrapheAnciennete.appendChild(texteAnciennetePersonne)
-    // E-MAIL
-    const paragrapheEMail = document.createElement('p')
-    paragrapheEMail.id = 'paragraphePoste'
-    const texteEMailPersonne = document.createTextNode(listePersonnes[veritableID].email)
-    paragrapheEMail.appendChild(texteEMailPersonne)
-    // TÉLÉPHONE
-    const paragrapheTelephone = document.createElement('p')
-    paragrapheTelephone.id = 'paragraphePoste'
-    const texteTelephonePersonne = document.createTextNode(listePersonnes[veritableID].telephone)
-    paragrapheTelephone.appendChild(texteTelephonePersonne)
-
-
-    blocDescription.replaceChildren(
-        imgPersonne,
-        paragraphePrenomPersonne,
-        paragrapheNomPersonne,
-        paragrapheService,
-        paragraphePoste,
-        paragrapheAnciennete,
-        paragrapheEMail,
-        paragrapheTelephone
-    )
 }
 
 
