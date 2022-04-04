@@ -3,6 +3,11 @@
 Cette application est un prototype de trombinoscope avancé basé sur les compétences
 et les champs d'actions des personnes plutôt que sur la hiérarchie.
 
+Les auteurs :
+- ADAM Camille (design)
+- CREANTOR Maelys (design)
+- RACINE Pierre-Alexandre (développement)
+
 ## Utilisation
 
 L'interface principale se trouve sur l'url de base du serveur.
