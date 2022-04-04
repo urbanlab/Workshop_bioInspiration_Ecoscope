@@ -1,19 +1,14 @@
 <?php
-
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 /*
  * PREMIÈRE ÉTAPE : RÉCUPÉRATION DES DONNÉES
  */
 
 // Les informations sont pour le moment stockées dans un fichier rawData.csv
 $handle = fopen('data/rawData.csv','r');
-/*
- * todo
-Le contour du bloc de description doit s'adapter à la couleur du service de la personne sélectionnée.
-Si personne n'est sélectionné, le liseré du bloc n'apparaît pas.
 
-bonus :
-faire la liste de chaque personnel (la page !)
-*/
 $count=0;
 $personnes=array();
 while ( ($data = fgetcsv($handle) ) !== FALSE ) {
@@ -29,7 +24,7 @@ while ( ($data = fgetcsv($handle) ) !== FALSE ) {
         $personne['nom'] = genererNom();
         $personne['email'] = genererEmail($personne['prenom'], $personne['nom']);
         $personne['photo'] = genererPhoto($personne['genre']);
-        array_push($personnes, $personne);
+        $personnes[] = $personne;
     }
     $count++;
 }
