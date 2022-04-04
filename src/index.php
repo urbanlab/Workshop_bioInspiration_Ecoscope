@@ -43,18 +43,19 @@ $personne['prenom'] = $data[1];
 $personne['nom'] = $data[0];
 $personne['email'] = $data[8];
 $personne['photo'] = genererPhoto($personne['genre']);
-array_push($personnes, $personne);
+$personnes[] = $personne;
 
 
 /**
  * @return string
  */
-function genererNumeroTelephoneAleatoire(){
-    return '04 ' . strval(rand(10, 99)) . ' ' . strval(rand(10, 99)) . ' ' . strval(rand(10, 99)) . ' ' . strval(rand(10, 99));
+function genererNumeroTelephoneAleatoire(): string
+{
+    return '04 ' . rand(10, 99) . rand(10, 99) . rand(10, 99) . rand(10, 99);
 }
 
 
-function genererPhoto($genre='femme'){
+function genererPhoto($genre='femme'): string{
     // On a une liste de photos divisée en deux dossiers 'homme' et 'femme'. On en pioche une au hasard.
     if($genre==='homme'){
         $photos = array_slice(scandir('data/portraits_mdm/homme/'), 2); // On retire les . et ..
@@ -66,7 +67,7 @@ function genererPhoto($genre='femme'){
 
 
 
-function genererGenre(){
+function genererGenre(): string{
     $genres = array('femme', 'homme');
     return $genres[rand(0,1)];
 }
@@ -83,14 +84,14 @@ function genererNom(){
 
 }
 
-function genererPrenom($genre='femme'){
+function genererPrenom($genre='femme'): string{
     if ($genre==='femme'){
         return genererPrenomFeminin();
     }
     return genererPrenomMasculin();
 }
 
-function genererPrenomFeminin(){
+function genererPrenomFeminin(): string{
     $prenoms = array();
     $lines = file('data/prenoms_feminins_raw.txt');
     foreach ($lines as $line) {
@@ -101,7 +102,7 @@ function genererPrenomFeminin(){
     return $prenoms[array_rand($prenoms, 1)];
 }
 
-function genererPrenomMasculin(){
+function genererPrenomMasculin(): string{
     $prenoms = array();
     $lines = file('data/prenoms_masculins_raw.txt');
     foreach ($lines as $line) {
@@ -112,7 +113,7 @@ function genererPrenomMasculin(){
     return $prenoms[array_rand($prenoms, 1)];
 }
 
-function genererEmail($prenom='', $nom='') {
+function genererEmail($prenom='', $nom=''): string {
     // La première lettre du prénom + le nom + @grandlyon.com
     return strtolower($prenom[0] . $nom) . '@grandlyon.com';
 }
@@ -121,22 +122,18 @@ function genererEmail($prenom='', $nom='') {
 echo genererPage($personnes);
 
 
-function genererPage($personnes=array()){
+function genererPage($personnes=array()): string{
     return genererEnTete() . genererCorpsDePage($personnes) . genererPiedDePage();
 }
 
-function genererEnTete(){
+function genererEnTete(): string{
     return '<!DOCTYPE html>
 <html lang="fr">
     <head>
         <meta charset="utf-8">
         <title>Trombi_MDM</title>
-        
-        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-        <meta http-equiv="Pragma" content="no-cache" />
-        <meta http-equiv="Expires" content="0" />
        
-        <!-- Fake favicon, to avoid extra request to server -->
+        <!-- Favicon bidon pour éviter une erreur sous Firefox. -->
         <link rel="icon" href="data:;base64,iVBORw0KGgo=">
         
         <link rel="stylesheet" type="text/css" href="trombi.css">
@@ -149,7 +146,7 @@ function genererEnTete(){
     </head>';
 }
 
-function genererCorpsDePage($personnes=array()){
+function genererCorpsDePage($personnes=array()): string{
     return '
     <body>
         <script type="text/javascript">
@@ -232,7 +229,7 @@ function genererCorpsDePage($personnes=array()){
   </body>';
 }
 
-function genererPiedDePage(){
+function genererPiedDePage(): string{
     return '
 </html>';
 }

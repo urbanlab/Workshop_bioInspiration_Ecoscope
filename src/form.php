@@ -61,7 +61,7 @@ echo '<!DOCTYPE html>
         <canvas id="canvas">
         </canvas>
         <div class="output">
-            <img id="photo" alt="The screen capture will appear in this box.">
+            <img src="" id="photo" alt="The screen capture will appear in this box.">
         </div>
     </div>
     <div class="blocPrincipal" id="blocMilieu">
@@ -114,7 +114,7 @@ echo '<!DOCTYPE html>
             <div id="blocMilieuBasDroite">
                 <p>Numéro de téléphone</p>
                 <input type="text" name="telephone">
-                <p><input type="submit"></input></p>
+                <p><input type="submit"></p>
             </div>
         </div>
     </div>
