@@ -8,6 +8,8 @@ Les auteurs :
 - CREANTOR Maëlys (design) [LinkedIn](https://www.linkedin.com/in/maelys-creantor-a666461bb/)
 - RACINE Pierre-Alexandre (développement)
 
+Une démo est visible [ici](https://ecoscope.projets.erasme.org/).
+
 ## Utilisation
 
 L'interface principale se trouve sur l'url de base du serveur.
