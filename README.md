@@ -41,9 +41,6 @@ faire fonctionner l'application. L'installation de la bibliothèque vis.js peut 
 de la manière que vous souhaitez (pensez juste à adapter le code HTML l'appelant
 dans votre `index.php`)
 
-Pour le moment, il suffit de copier le dossier dans un dossier apache et d'ouvrir l'url
-correspondante dans votre navigateur pour en voir le résultat.
-
 ### Installation automatisée
 
 Un `Dockerfile` est disponible. Suivez ces étapes :
