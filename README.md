@@ -49,7 +49,7 @@ Un `Dockerfile` est disponible. Suivez ces étapes :
 # Clonage du dépôt
 git clone https://github.com/urbanlab/Workshop_bioInspiration_Ecoscope.git ~/Projets/ecoscope
 # Déplacement dans notre code
-cd ecoscope/src
+cd ~/Projets/ecoscope/src
 # Installation des bibliothèques js.
 npm install
 # Construction de l'image
