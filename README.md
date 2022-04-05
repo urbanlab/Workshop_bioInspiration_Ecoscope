@@ -4,8 +4,8 @@ Cette application est un prototype de trombinoscope avancé basé sur les compé
 et les champs d'actions des personnes plutôt que sur la hiérarchie.
 
 Les auteurs :
-- ADAM Camille (design)
-- CREANTOR Maelys (design)
+- ADAM Camille (design) [site](https://www.camilleadam.com/)
+- CREANTOR Maëlys (design) [LinkedIn](https://www.linkedin.com/in/maelys-creantor-a666461bb/)
 - RACINE Pierre-Alexandre (développement)
 
 ## Utilisation
